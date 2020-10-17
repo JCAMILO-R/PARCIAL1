@@ -33,6 +33,8 @@ int main()
 
                  switch (caso) {
                  case(1):{
+                     int i=0;
+                     while(i<3){
                      cout<<"ingrese los parametros de iniciales"<<endl;
                      cout<<"Altura del cañon ofensivo"<<endl;
                      cin>> alturao;
@@ -46,13 +48,15 @@ int main()
                      cin>>angulo;
                      float altura = alturad-alturao;
 
+                     if(verificacion_del_radioDD(,distancia)){}
 
 
 
 
 
 
-                 }break;
+
+                i++; }}break;
 
 
 
@@ -72,7 +76,7 @@ bool verificacion_del_radioDo(float a, float b){
     else return false;
      }
 bool verificacion_del_radioDD(float a, float b){
-    float distancia = b - 0.05*b;
+    float distancia = b - 0.025*b;
     if (a >= distancia) return  true;
     else return false;
 }
@@ -88,12 +92,12 @@ float altura_ofensivo(float v, float ang, float d ){
 
 float calculo_de_pos_Xo_en_t2(float v, float ang){
     float x;
-x=(v*sin(ang*pi/180))*2;
+x=(v*sin(ang*pi/180))*2.5;
 return x;
 }
 float calculo_de_pos_Yo_en_t2(float v, float ang){
     float y;
-    y=(v*sin(ang*pi/180))*2-0.5*g*4;
+    y=(v*sin(ang*pi/180))*2-0.5*g*6.25;
     return y;
 
 }
