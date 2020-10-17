@@ -3,13 +3,13 @@
 
 using namespace std;
 int caso=0;
-float g=9.81;
+float g=9.81,pi=3.14159;
 float alturao=0, alturad=0, distancia=0,velocidadO=0,angulo=0,radioO=0, radioD=0;
 //otra forma de  las variables es realizando un arreglo tipo float de de 7 indices. arregloFloar[6]+
 
 bool verificacion_del_radioDO(float a, float b);
 bool verificacion_del_radioDD(float a, float b);
-float altura_ofensivo(float v, float ang, float d, float H );
+float altura_ofensivo(float v, float ang, float d);
 
 
 
@@ -40,10 +40,11 @@ int main()
                  cin>>velocidadO;
                  cout<<"angulo inicial del proyectil ofensivo"<<endl;
                  cin>>angulo;
-                  float altura = alturad-alturao;
+                 float altura = alturad-alturao;
                  switch (caso) {
 
                  case(1):{
+
 
 
 
@@ -70,12 +71,14 @@ bool verificacion_del_radioDD(float a, float b){
     float distancia = b - 0.05*b;
     if (a >= distancia) return  true;
     else return false;
-
-
-    float altura_ofensivo(float v, float ang, float d, float H ){
-
-
-    }
-
-
 }
+
+float altura_ofensivo(float v, float ang, float d ){
+    float t, altu=0;
+
+    t=d/(v*cos(ang*pi/180 ));
+    altu=v*sin(ang*pi/180 )*t-0.5*g*t*t;
+    return altu;}
+
+
+
