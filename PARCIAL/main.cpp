@@ -6,8 +6,13 @@ int caso=0;
 float alturao=0, alturad=0, distancia=0,velocidadO=0,angulo=0,radioO=0, radioD=0;
 //otra forma de  las variables es realizando un arreglo tipo float de de 7 indices. arregloFloar[6]+
 
+bool verificacion_del_radioDo(float a, float b);
+bool verificacion_del_radioDD(float a, float b);
 
-float velocidadD();
+
+
+
+float posicion_inicial_D(float a);
 
 
 int main()
@@ -51,6 +56,18 @@ int main()
 
 
 
+
+
+}//Main
+bool verificacion_del_radioDo(float a, float b){
+    float distancia = 0.05*b;
+    if (a>=distancia) return  true;
+    else return false;
+     }
+bool verificacion_del_radioDD(float a, float b){
+    float distancia = b - 0.05*b;
+    if (a >= distancia) return  true;
+    else return false;
 
 
 }
