@@ -10,7 +10,8 @@ float alturao=0, alturad=0, distancia=0,velocidadO=0,angulo=0,radioO=0, radioD=0
 bool verificacion_del_radioDO(float a, float b);
 bool verificacion_del_radioDD(float a, float b);
 float altura_ofensivo(float v, float ang, float d);
-
+float calculo_de_pos_Xo_en_t2(float v, float ang);
+float calculo_de_pos_Yo_en_t2(float v, float ang);
 
 
 
@@ -18,7 +19,7 @@ float posicion_inicial_D(float a);
 
 
 int main()
-{       cout<<"1. Generar disparos (al menos tres) ofensivos que comprometan la integridad del cañón defensivo."<<endl;
+{      while(true){ cout<<"1. Generar disparos (al menos tres) ofensivos que comprometan la integridad del cañón defensivo."<<endl;
 
          cout<<" 2. Generar disparos (al menos tres) defensivos que comprometan la integridad del cañón ofensivo."<<endl;
 
@@ -29,21 +30,24 @@ int main()
              cout<<"ingrese el caso de interes"<<endl;
              cin>>caso;
                  float alturao=0, alturad=0, distancia=0,velocidadO=0,angulo=0,radioO=0, radioD=0;
-                 cout<<"ingrese los parametros de iniciales"<<endl;
-                 cout<<"Altura del cañon ofensivo"<<endl;
-                 cin>> alturao;
-                 cout<<"Altura del cañon defensivo"<<endl;
-                 cin>> alturad;
-                 cout<<"la distancia entre los cañones"<<endl;
-                 cin>> distancia;
-                 cout<<"Velocidad inicial del proyectil ofensivo"<<endl;
-                 cin>>velocidadO;
-                 cout<<"angulo inicial del proyectil ofensivo"<<endl;
-                 cin>>angulo;
-                 float altura = alturad-alturao;
-                 switch (caso) {
 
+                 switch (caso) {
                  case(1):{
+                     cout<<"ingrese los parametros de iniciales"<<endl;
+                     cout<<"Altura del cañon ofensivo"<<endl;
+                     cin>> alturao;
+                     cout<<"Altura del cañon defensivo"<<endl;
+                     cin>> alturad;
+                     cout<<"la distancia entre los cañones"<<endl;
+                     cin>> distancia;
+                     cout<<"Velocidad inicial del proyectil ofensivo"<<endl;
+                     cin>>velocidadO;
+                     cout<<"angulo inicial del proyectil ofensivo"<<endl;
+                     cin>>angulo;
+                     float altura = alturad-alturao;
+
+
+
 
 
 
@@ -60,7 +64,7 @@ int main()
 
 
 
-
+}//while
 }//Main
 bool verificacion_del_radioDo(float a, float b){
     float distancia = 0.05*b;
@@ -82,3 +86,14 @@ float altura_ofensivo(float v, float ang, float d ){
 
 
 
+float calculo_de_pos_Xo_en_t2(float v, float ang){
+    float x;
+x=(v*sin(ang*pi/180))*2;
+return x;
+}
+float calculo_de_pos_Yo_en_t2(float v, float ang){
+    float y;
+    y=(v*sin(ang*pi/180))*2-0.5*g*4;
+    return y;
+
+}
