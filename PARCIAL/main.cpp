@@ -48,7 +48,7 @@ int main()
                      cin>>angulo;
                      float altura = alturad-alturao;
 
-                     if(verificacion_del_radioDD(,distancia)){}
+                     if(verificacion_del_radioDD(88,distancia)){}
 
 
 
